@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd"> 
+     
+     <bean id="configBean"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>conf/marvel.properties.dev</value>
+		</property>
+	 </bean>
+     <!--
+     <bean id="transporter" class="com.only.es.marvel.ESTransporter" init-method="init" destroy-method="destory">
+		<property name="cluster" value="${za.es.marvel.server}" />  
+		<property name="settings">  
+		      <map>  
+		        <entry key="cluster.name" value="${za.es.marvel.cluster.name}"/>  
+		      </map>  
+  		</property> 
+  		<property name="bulk">  
+		      <map>  
+		        <entry key="actions" value="${za.es.marvel.bulk.actions}"/>  
+		        <entry key="size" value="${za.es.marvel.bulk.size}"/>  
+		        <entry key="request" value="${za.es.marvel.bulk.request}"/>  
+		      </map>  
+  		</property>     
+	</bean>
+	  -->	
+	 <bean id="node" class="com.only.es.marvel.ESNode" init-method="init" destroy-method="destory">
+		 <property name="cluster" value="${za.es.marvel.server}" />  
+		<property name="settings">  
+		      <map>  
+		        <entry key="cluster.name" value="${za.es.marvel.cluster.name}"/> 
+		        <entry key="node.name" value="${za.es.marvel.cluster.node.name}"/>  
+		      </map>  
+  		</property> 
+		 <property name="bulk">  
+		      <map>  
+		        <entry key="actions" value="${za.es.marvel.bulk.actions}"/>  
+		        <entry key="size" value="${za.es.marvel.bulk.size}"/>  
+		        <entry key="request" value="${za.es.marvel.bulk.request}"/>  
+		      </map>  
+  		</property>     
+	</bean>
+
+	
+</beans>

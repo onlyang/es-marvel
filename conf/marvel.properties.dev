@@ -1,0 +1,27 @@
+
+#es-client
+za.es.marvel.server=10.139.32.136,10.139.32.175
+za.es.marvel.cluster.name=elasticsearch-dev
+za.es.marvel.cluster.node.name=marvel-node-1
+#es bulk
+za.es.marvel.bulk.actions=1000
+za.es.marvel.bulk.request=2
+#flush size,MB
+za.es.marvel.bulk.size=5
+
+#hdfs
+za.es.marvel.hdfs.uri=hdfs://10.139.32.175:9000/
+za.es.marvel.hdfs.fetch.size=1000
+
+#claim
+za.es.marvel.claim.hdfs.path=user/admin/search4claim_es
+#0,1,2
+za.es.marvel.claim.hdfs.shard=0
+za.es.marvel.claim.hdfs.file.name=search4claim
+za.es.marvel.claim.index=claim-test
+za.es.marvel.claim.type=claim
+za.es.marvel.claim.id=id
+
+
+
+

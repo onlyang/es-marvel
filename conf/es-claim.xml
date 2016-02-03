@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd"> 
+     
+  
+
+    <import resource="spring-es.xml" />
+   
+	<bean id="claimFullDump" class="com.only.es.marvel.FullDump" >
+		<property name="index" value="${za.es.marvel.claim.index}" /> 
+		<property name="type" value="${za.es.marvel.claim.type}" />
+		<property name="batchSize" value="${za.es.marvel.hdfs.fetch.size}"/>  
+		<property name="id" value="${za.es.marvel.claim.id}"/>
+		<property name="client" ref ="node"/>  
+		<property name="dataSource" ref ="hdfsDataSource"/>
+	</bean>
+
+	 <bean id="hdfsDataSource" class="com.only.es.marvel.data.HDFSDataSource">
+		<property name="hdfs" value="${za.es.marvel.hdfs.uri}" /> 
+		<property name="path" value="${za.es.marvel.claim.hdfs.path}" />  
+		<property name="name" value="${za.es.marvel.claim.hdfs.file.name}"/> 
+		<property name="shard" value="${za.es.marvel.claim.hdfs.shard}"/>
+	</bean>
+	
+</beans>
